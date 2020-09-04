@@ -1,41 +1,54 @@
 /* global Buffer */
 /* global __dirname */
-var express = require("express");
-var url = require("url");
-var http = require("http");
+const express = require("express");
+const url = require("url");
+const http = require("http");
 
-var port = 3000;
-var app = express();
+const port = 3010;
+const app = express();
 app.use(express.static(__dirname + "/client"));
 http.createServer(app).listen(port);
 
-var todos = [];
-var t1 = { message : "Maths homework due", type  : 1, deadline : "12/12/2015"};
-var t2 = { message : "English homework due", type : 3, deadline : "20/12/2015"};
-todos.push(t1);
-todos.push(t2);
+let psvrGames = [
+	{
+		title: "Iron Man VR",
+		rating: "Teen",
+		price: "$39"
+	},
+	{
+		title: "Fruit Ninja",
+		rating: "",
+		price: "$28"
+	},
+	{
+		title: "Creed: Rise to Glory",
+		rating: "Teen",
+		price: "$19.99"
+	}
+];
 
-//clients requests todos
-app.get("/todos", function (req, res) {
-	console.log("todos requested!");
-	res.json(todos);
+
+//clients requests the list of games
+app.get("/psvrGames", function (req, res) {
+	console.log("PSVR games requested!");
+	res.json(psvrGames);
 });
 
-//add todo to the server
-app.get("/addtodo", function (req, res) {
-	var url_parts = url.parse(req.url, true);
-	var query = url_parts.query;
-	
-	if(query["message"]!==undefined) {
-		var tx = { message : query["message"], 
-			type: query["type"],
-			deadline: query["deadline"]
-		};
-		todos.push(tx);
-		console.log("Added " + tx.message);
-		res.end("Todo added successfully");
+//add a game
+app.get("/addPsvrGame", function (req, res) {
+	let query = url.parse(req.url, true).query;
+
+	let newGame = {
+		title: query["title"],
+		rating: query["rating"],
+		price: query["price"]
 	}
-	else {
-		res.end("Error: missing message parameter");
-	}
+
+	if( newGame.title == undefined || newGame.title.length==0)
+		res.end("Each new game needs to have at least a title.");
+
+	psvrGames.push(newGame);
+
+	console.log("Game " + newGame.title + " added.");
+	res.end("Todo added successfully");
 });

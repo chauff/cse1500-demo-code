@@ -1,22 +1,29 @@
-var main = function () {
-	"use strict";
+"use strict";
 
-	var addTodosToList = function (todos) {
-		console.log("Loading todos from server");
-		var todolist = document.getElementById("todo-list");
-		for (var key in todos) {
-			var li = document.createElement("li");
-			li.innerHTML = "TODO: " + todos[key].message;
-			todolist.appendChild(li);
-		}
-	};
+function addGamesToList(games) {
+	console.log("Loading games from server.");
 
-	/*
-	 * This request retrieves the todo list once, to make this a regular
-	 * "event", make use of setInterval() 
-	 */ 
-	$.getJSON("../todos", addTodosToList)
-		.done( function(){ console.log("Ajax request successful.");})
-		.fail( function(){ console.log("Ajax request failed.");});
-};
-$(document).ready(main);
+	let gamesList = document.querySelector("ul");
+	for(let key in games){
+		let game = games[key];
+		let li = document.createElement("li");
+		li.innerHTML = game.title + " ("+game.price+")";
+		gamesList.appendChild(li);
+	}
+}
+
+/* 
+ * retrieve the games from the server once;
+ * use setInterval to do this regularly 
+ */
+axios.get('/psvrGames')
+	.then( function(res){
+		//success
+		console.log(res.status);
+		console.log(res.data);
+		addGamesToList(res.data);
+	})
+	.catch(function(err){
+		//error
+		console.log(err);
+	});
