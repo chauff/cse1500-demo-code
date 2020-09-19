@@ -1,12 +1,12 @@
 /* global Buffer */
 /* global __dirname */
-var express = require("express");
-var url = require("url");
-var http = require("http");
+const express = require("express");
+const url = require("url");
+const http = require("http");
 
-var port = 3000; //hardcoded port
+const port = 3000; //hardcoded port
 
-var app = express();
+const app = express();
 app.use(express.static(__dirname + "/client"));
 
 //logger component
@@ -38,33 +38,38 @@ app.use(function (req, res, next) {
 
 http.createServer(app).listen(port);
 
-var todos = [];
-var t1 = { message : "Maths homework due", type  : 1, deadline : "12/12/2015"};
-var t2 = { message : "English homework due", type : 3, deadline : "20/12/2015"};
-todos.push(t1);
-todos.push(t2);
+const wishlist = [];
+let w1 = { type: "video game", name: "Hogwarts Legacy", priority: "high"};
+let w2 = { type: "board game", name: "Sushi Go", priority: "medium"};
+wishlist.push(w1);
+wishlist.push(w2);
 
-//clients requests todos
-app.get("/todos", function (req, res) {
-	console.log("todos requested!");
-	res.json(todos);
+//clients requests her wishlist
+app.get("/wishlist", function (req, res) {
+	console.log("wishlist requested!");
+	res.json(wishlist);
 });
 
-//add todo to the server
-app.get("/addtodo", function (req, res) {
+//add wishlist item to the server
+app.get("/addWish", function (req, res) {
 	var url_parts = url.parse(req.url, true);
 	var query = url_parts.query;
+	console.log(query);
 	
-	if(query["message"]!==undefined) {
-		var tx = { message : query["message"], 
-			type: query["type"],
-			deadline: query["deadline"]
-		};
-		todos.push(tx);
-		console.log("Added " + tx.message);
-		res.end("Todo added successfully");
+	if(query["name"]==undefined){
+		res.end("Error: the name of the wish has to be specified.");
 	}
-	else {
-		res.end("Error: missing message parameter");
+	else{
+		let w = {type: "", name: query["name"], priority: ""};
+
+		if(query["type"]!==undefined)
+			w.type = query["type"];
+
+		if(query["priority"]!==undefined)
+			w.priority = query["priority"];
+
+		wishlist.push(w);
+		console.log("Added " + w.name);
+		res.end("Wish added successfully");
 	}
 });
