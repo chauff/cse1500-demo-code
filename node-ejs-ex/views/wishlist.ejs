@@ -6,10 +6,10 @@
 <body>
 	<h1>TODOs</h1>
 	<div>
-		<% todo_array.forEach(function(todo) { %>
+		<% input.forEach(function(w) { %>
 		<div>
-			<h3><%=todo.dueDate%></h3>
-			<p><%=todo.message%></p>
+			<h3><%=w.name%></h3>
+			<p><%=w.type%></p>
 		</div>
 		<% }) %>
 	</div>
