@@ -104,6 +104,8 @@ Here, we actually do not provide a port number, as port `3000` is hard-coded int
 
 ## node-express-regex
 
+![Express String Pattern Matcher](img/stringPatternDemo.png)
+
 This is a demo of an **Express string pattern matcher**. It allows you to set a string pattern via an HTML form and then trial different URLs to see whether they match the submitted pattern. By default, pattern `/ab*cd` is set. 
 
 Note, that the pattern is set **without** a leading dash `/`, so the route `/ab*cd` is set by submitting the string pattern `ab*cd`. There is no input validation taking place, it is up to you to submit a valid string pattern.
