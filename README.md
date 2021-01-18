@@ -15,6 +15,7 @@ git clone https://github.com/chauff/demo-code.git
 - [node-tcp-ex](#node-tcp-ex)
 - [node-web-ex](#node-web-ex)
 - [node-express-ex](#node-express-ex)
+- [node-express-regex](#node-express-regex)
 - [node-websocket-ex](#node-websocket-ex)
 - [node-ajax-ex](#node-ajax-ex)
 - [node-component-ex](#node-component-ex)
@@ -100,6 +101,27 @@ Here, we actually do not provide a port number, as port `3000` is hard-coded int
 - http://localhost:3000/greetme?firstname=Claudia
 - http://localhost:3000/greetme?location=Delft&name=Claudia
 - http://localhost:3001/
+
+## node-express-regex
+
+This is a demo of an **Express string pattern matcher**. It allows you to set a string pattern via an HTML form and then trial different URLs to see whether they match the submitted pattern. By default, pattern `/ab*cd` is set. 
+
+Note, that the pattern is set **without** a leading dash `/`, so the route `/ab*cd` is set by submitting the string pattern `ab*cd`. There is no input validation taking place, it is up to you to submit a valid string pattern.
+
+Install the demo as follows:
+
+```console
+cd Web-Teaching/demo-code/node-express-regex-ex/
+npm install
+node web.js
+```
+
+Now start the browser and access `http://localhost:3000/`. A call to `http://localhost:3000/retrievePattern` shows the currently set pattern. To check the result of submitting valid and invalid routes, try the following two URLS:
+
+- `http://localhost:3000/ab` (invalid)
+- `http://localhost:3000/ab1234cd` (valid)
+
+Now that you know how the demo works, submit your own string pattern via the form and test your string pattern knowledge!
 
 ## node-websocket-ex
 

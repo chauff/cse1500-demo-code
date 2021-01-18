@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Invalid pattern!</title>
+        <style>
+            body {
+                display: grid;
+                height: 100vh;
+                justify-content: center;
+                align-content: center;
+                font-size: 3vw;
+                color: lightpink;
+                background-color: darkred;
+            }
+
+            .path {
+                font-family: 'Courier New', Courier, monospace;
+                background-color: lightpink;
+                color:darkred;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>It is NOT a match!</h1>
+
+        <h2>Pattern: <span class="path"><%= pattern %></span></h2>
+        <h2>Path: <span class="path"><%= path %></span></h2>
+    </body>
+</html>
