@@ -1,4 +1,4 @@
-//load http and express modules
+//load all modules
 const express = require("express");
 const bodyParser = require("body-parser");
 const http = require("http");
