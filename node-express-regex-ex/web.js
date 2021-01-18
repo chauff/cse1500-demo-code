@@ -1,8 +1,8 @@
 //load http and express modules
 const express = require("express");
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const http = require("http");
-var parser = bodyParser.urlencoded({ extended: false});
+const parser = bodyParser.urlencoded({ extended: false});
 
 //we can also load cookie, session, body parser, etc. middleware here
 
