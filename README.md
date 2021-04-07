@@ -216,7 +216,7 @@ Now open your browser and access the following URL: http://localhost:3000/todos.
 This folder contains a number of single-page applications that are used mostly in exams. Install and start the server
 
 ```console
-cd Web-Teaching/demo-code/node-ejs-ex/
+cd Web-Teaching/demo-code/node-SPAs-ex/
 npm install
 node app.js 3000
 ```
