@@ -1,0 +1,234 @@
+:root {
+    --defaultColor: #333334;
+    --contrastColor: gold;
+    --hoverColor: pink;
+    --contrastDots: orange;
+    --strokePx: calc(1vw + 15px);
+    --pointerRadius: 25px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    color: var(--defaultColor);
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 25px;
+    background: url('../img/tv.png'), var(--defaultColor);
+    background-size: cover;
+}
+
+#pointer {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    border-radius: 50%;
+    /* making it round */
+    height: calc(var(--pointerRadius)*2);
+    width: calc(var(--pointerRadius)*2);
+    background-color: var(--contrastColor);
+    opacity: 0.5;
+}
+
+main {
+    padding: 20px;
+    padding-top: 50px;
+    display: grid;
+    /* HH : MM : SS */
+    grid-template-columns: 0.3fr 0.05fr 0.3fr 0.05fr 0.3fr;
+}
+
+footer {
+    background-color: var(--contrastColor);
+}
+
+#hours,
+#minutes,
+#seconds {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    transform: rotate(1deg);
+    
+}
+
+.tens,
+.ones {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    padding-left: 5px;
+}
+
+div:hover div {
+    border-color: var(--hoverColor) !important;
+
+}
+
+/* ONE: upper digit part */
+.one div {
+    /*which things are the same? div.one div */
+    border-right: 15px solid var(--contrastColor);
+}
+
+/* TWO: upper digit part */
+div div.two div:nth-child(1) {
+    border-top: var(--strokePx) solid var(--contrastColor);
+    border-right: var(--strokePx) solid var(--contrastColor);
+    border-bottom: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* TWO: lower digit part */
+div div.two div:nth-child(2) {
+    border-left: var(--strokePx) solid var(--contrastColor);
+    border-bottom: var(--strokePx) solid var(--contrastColor);
+    border-top: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* THREE: upper digit part */
+.three div:nth-child(1) {
+    border-top: var(--strokePx) solid var(--contrastColor);
+    border-right: var(--strokePx) solid var(--contrastColor);
+    border-bottom: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* THREE: lower digit part */
+.three div:nth-child(2) {
+    border-right: var(--strokePx) solid var(--contrastColor);
+    border-bottom: var(--strokePx) solid var(--contrastColor);
+    border-top: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* FOUR: upper digit part */
+.four div:nth-child(1) {
+    border-left: var(--strokePx) solid var(--contrastColor);
+    border-right: var(--strokePx) solid var(--contrastColor);
+    border-bottom: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* FOUR: lower digit part */
+.four div:nth-child(2) {
+    border-right: var(--strokePx) solid var(--contrastColor);
+    border-top: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+
+/* FIVE: upper digit part */
+.five div:nth-child(1) {
+    border-top: var(--strokePx) solid var(--contrastColor);
+    border-left: var(--strokePx) solid var(--contrastColor);
+    border-bottom: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* FIVE: lower digit part */
+.five div:nth-child(2) {
+    border-right: var(--strokePx) solid var(--contrastColor);
+    border-bottom: var(--strokePx) solid var(--contrastColor);
+    border-top: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+
+/* SIX: upper digit part */
+.six div:nth-child(1) {
+    border-top: var(--strokePx) solid var(--contrastColor);
+    border-left: var(--strokePx) solid var(--contrastColor);
+    border-bottom: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* SIX: lower digit part */
+.six div:nth-child(2) {
+    border-right: var(--strokePx) solid var(--contrastColor);
+    border-left: var(--strokePx) solid var(--contrastColor);
+    border-bottom: var(--strokePx) solid var(--contrastColor);
+    border-top: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* SEVEN: upper digit part */
+.seven div:nth-child(1) {
+    border-top: var(--strokePx) solid var(--contrastColor);
+    border-right: var(--strokePx) solid var(--contrastColor);
+}
+
+/* SEVEN: lower digit part */
+.seven div:nth-child(2) {
+    border-right: var(--strokePx) solid var(--contrastColor);
+}
+
+
+/* EIGHT: upper digit part */
+.eight div:nth-child(1) {
+    border: var(--strokePx) solid var(--contrastColor);
+    border-bottom: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* EIGHT: lower digit part */
+.eight div:nth-child(2) {
+    border: var(--strokePx) solid var(--contrastColor);
+    border-top: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+
+/* NINE: upper digit part */
+.nine div:nth-child(1) {
+    border: var(--strokePx) solid var(--contrastColor);
+    border-bottom: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* NINE: lower digit part */
+.nine div:nth-child(2) {
+    border-right: var(--strokePx) solid var(--contrastColor);
+    border-bottom: var(--strokePx) solid var(--contrastColor);
+    border-top: calc(var(--strokePx)/2) solid var(--contrastColor);
+}
+
+/* NULL: upper digit part */
+.null div:nth-child(1) {
+    border: var(--strokePx) solid var(--contrastColor);
+    border-bottom: none;
+}
+
+/* NULL: lower digit part */
+.null div:nth-child(2) {
+    border: var(--strokePx) solid var(--contrastColor);
+    border-top: none;
+}
+
+.dots {
+    font-size: 600%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    animation-name: inout;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+
+@keyframes inout {
+    50% {
+        color: var(--contrastDots);
+    }
+}
+
+#hours {
+    position: relative;
+}
+
+#hours::before {
+    color: var(--contrastColor);
+    position: absolute;
+    content: "♝";
+    font-size: 200%;
+    right: 0px;
+    top: -30px;
+}
+
+footer::before {
+    color: var(--defaultColor);
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    content: "Last time sync with server: "attr(data-server-sync);
+    top: 5px;
+    left: 20px;
+}

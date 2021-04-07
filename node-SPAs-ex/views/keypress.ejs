@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<title><%= title %></title>
+	<style>
+        * {
+            padding: 0; margin: 0;
+        }
+        main {
+            height: 100vh; width: 100vw;
+            background-color: orange;
+            display: flex; font-size: 10vw;
+            justify-content: center; align-items: center;   
+        }
+        main::after {
+            content: attr(data-lastModified); color: red;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            content: attr(data-modified);
+            top: 5vw; left: 5vh;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+	<main data-modified=""></main>
+    <script>
+        window.addEventListener('keypress', function(e){
+            document.getElementsByTagName("main")[0].innerHTML = e.code;
+            document.getElementsByTagName("main")[0].dataset.modified = new Date().toDateString();
+        });
+    </script>
+</body>
+</html>

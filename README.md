@@ -22,6 +22,7 @@ git clone https://github.com/chauff/demo-code.git
 - [node-sessions-ex](#node-sessions-ex)
 - [node-cookies-ex](#node-cookies-ex)
 - [node-ejs-ex](#node-ejs-ex)
+- [node-SPAs-ex](#node-spas-ex)
 
 
 ## firefox-extension
@@ -209,3 +210,18 @@ node app.js 3000
 ```
 
 Now open your browser and access the following URL: http://localhost:3000/todos.
+
+## node-SPAs-ex
+
+This folder contains a number of single-page applications that are used mostly in exams. Install and start the server
+
+```console
+cd Web-Teaching/demo-code/node-ejs-ex/
+npm install
+node app.js 3000
+```
+
+Available are now three applications:
+- http://localhost:3000 shows off a digital clock (where the digits are designed with CSS `border-X` properties) that receives time updates from the server via Ajax.
+- http://localhost:3000/keypress shows off a utility app: whenever a key on the keyboard is pressed, the page shows the event code of that key. Contains a bit of EJS.
+- http://localhost:3000/colors/pink/blue shows off another utility app: the URL takes two colors (which it assumes exist in CSS's color space) and render a Hello World! text; the background color is the first color of the URL and the font color is the second color. It can be seen as a simple way to check whether two colors harmonize well with each other.

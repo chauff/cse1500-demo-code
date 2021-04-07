@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+	<title>Time</title>
+	<link href="css/style.css" rel="stylesheet">
+	<script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript"></script>
+	<script src="js/client.js"></script>
+</head>
+
+<body>
+	<span id="pointer"></span><!-- this <span> element has absolute positioning -->
+	<!-- time format is HH:MM:SS (example: 08:35:11) -->
+	<main>
+		<div id="hours"> <!-- HH (example: 08) -->
+			<!-- "tens" part of the digit (example: 0) -->
+			<div class="tens"><div></div><div></div>
+			</div>
+			<!-- "ones" part of the digit (example: 8) -->
+			<div class="ones"><div></div><div></div>
+			</div>
+		</div>
+		<div class="dots">:</div>
+		<div id="minutes"> <!-- MM (example: 35)-->
+			<div class="tens"><div></div><div></div>
+			</div>
+			<div class="ones"><div></div><div></div>
+			</div>
+		</div>
+		<div class="dots">:</div>
+		<div id="seconds"> <!-- SS (example: 11)-->
+			<div class="tens"><div></div><div></div>
+			</div>
+			<div class="ones"><div></div><div></div>
+			</div>
+		</div>
+	</main>
+	<footer data-server-sync=""></footer>
+</body>
+</html>
+
