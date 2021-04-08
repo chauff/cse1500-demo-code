@@ -221,7 +221,16 @@ npm install
 node app.js 3000
 ```
 
-Available are now three applications:
-- http://localhost:3000 shows off a digital clock (where the digits are designed with CSS `border-X` properties) that receives time updates from the server via Ajax.
-- http://localhost:3000/keypress shows off a utility app: whenever a key on the keyboard is pressed, the page shows the event code of that key. Contains a bit of EJS.
-- http://localhost:3000/colors/pink/blue shows off another utility app: the URL takes two colors (which it assumes exist in CSS's color space) and render a Hello World! text; the background color is the first color of the URL and the font color is the second color. It can be seen as a simple way to check whether two colors harmonize well with each other.
+Available are now three little utilities:
+
+http://localhost:3000 shows off a digital clock (where the digits are designed with CSS `border-X` properties) that receives time updates from the server via Ajax.
+
+![Digital clock](img/clockDemo.png)
+
+http://localhost:3000/keypress shows off a utility app: whenever a key on the keyboard is pressed, the page shows the event code of that key. Contains a bit of EJS.
+
+![Keypress](img/keypressDemo.png)
+
+http://localhost:3000/colors/pink/blue shows off another utility: the URL takes two colors (which it assumes exist in CSS's color space) and render a Hello World! text; the background color is the first color of the URL and the font color is the second color. It can be seen as a simple way to check whether two colors harmonize well with each other.
+
+![Colors](img/colorsDemo.png)
