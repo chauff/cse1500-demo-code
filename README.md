@@ -5,7 +5,7 @@ Each of the directories `node-XX-ex` contain a fully working toy example, showca
 Execute the following command in the terminal to download all source code examples (as well as all lecture materials) at once:
 
 ```console
-git clone https://github.com/chauff/demo-code.git
+git clone https://github.com/chauff/cse1500-demo-code.git
 ```
 
 **The following instructions to install and run the different scripts assume you are currently in the directory where the above line was executed.**
