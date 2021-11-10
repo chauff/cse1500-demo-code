@@ -1,15 +1,15 @@
-var express = require("express");
-var http = require("http");
+const express = require("express");
+const http = require("http");
 
 /* Cookie and session setup */
-var credentials = require("./credentials");
-var cookies = require("cookie-parser");
-var sessions = require("express-session");
+const credentials = require("./credentials");
+const cookies = require("cookie-parser");
+const sessions = require("express-session");
 /* Setup complete */
-var app = express();
+const app = express();
 
 app.use(cookies(credentials.cookieSecret));
-var sessionConfiguration = {
+const sessionConfiguration = {
 	// Code is slightly adjusted to avoid deprecation warnings when running the code.
 	secret: credentials.cookieSecret,
 	resave: false,
@@ -21,7 +21,7 @@ http.createServer(app).listen(3000);
 app.get("/countMe", function (req, res) {
 
   /* session object available on req object only */
-	var session = req.session;
+	const session = req.session;
 
 	if (session.views) { /* the session exists! */
 		session.views++;
