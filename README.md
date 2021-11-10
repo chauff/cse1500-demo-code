@@ -209,7 +209,7 @@ npm install
 node app.js 3000
 ```
 
-Now open your browser and access the following URL: http://localhost:3000/todos.
+Now open your browser and access the following URL: http://localhost:3000/wishlist.
 
 ## node-SPAs-ex
 
