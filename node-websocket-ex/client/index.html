@@ -13,7 +13,7 @@
         -->
         <script>
             const target = document.getElementById("hello");
-            const socket = new WebSocket("ws://localhost:3456");
+            const socket = new WebSocket("ws://localhost:3000");
             socket.onmessage = function(event){
                 target.innerHTML = event.data;
             };
