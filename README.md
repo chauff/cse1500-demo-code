@@ -46,7 +46,7 @@ This Node.js script *watches* a file and reports on the console, when a change o
 To run it, execute the following commands in your terminal:
 
 ```console
-cd Web-Teaching/demo-code/node-file-watching-ex/
+cd cse1500-demo-code/node-file-watching-ex/
 node watching.js todos.txt
 ```
 
@@ -59,7 +59,7 @@ This Node.js script (=server) watches a file and informs subscribed clients abou
 To run it, execute the following commands in your terminal:
 
 ```console
-cd Web-Teaching/demo-code/node-tcp-ex/
+cd cse1500-demo-code/node-tcp-ex/
 node tcp.js todos.txt 3000
 ```
 
@@ -78,7 +78,7 @@ If everything went as intended, your client now shows the message `Now watching 
 This Node.js script shows the most minimalistic web server possible: whatever the HTTP request, it will respond with `Hello World!`. To start it, execute the following command in your terminal:
 
 ```console
-cd Web-Teaching/demo-code/node-web-ex/
+cd cse1500-demo-code/node-web-ex/
 node web.js 3000
 ```
 
@@ -89,7 +89,7 @@ Open your browser and use the following URL `http://localhost:3000/` to receive 
 This Node.js script makes use of the Express framework. It is a simple web server that has a route `/greetme` and sends a simple text message in the HTTP response. As Express is not a module installed by default, we first have to install the required modules as stated in `package.json`:
 
 ```console
-cd Web-Teaching/demo-code/node-express-ex/
+cd cse1500-demo-code/node-express-ex/
 npm install
 node web.js
 ```
@@ -114,7 +114,7 @@ Note, that the pattern is set **without** a leading dash `/`, so the route `/ab*
 Install the demo as follows:
 
 ```console
-cd Web-Teaching/demo-code/node-express-regex-ex/
+cd cse1500-demo-code/node-express-regex-ex/
 npm install
 node web.js
 ```
@@ -131,7 +131,7 @@ Now that you know how the demo works, submit your own string pattern via the for
 This Node.js script makes use of the Express framework. It is a simple web server that has a route `/greetme` and sends a simple text message in the HTTP response. As Express is not a module installed by default, we first have to install the required modules as stated in `package.json` and then, the server can be started:
 
 ```console
-cd Web-Teaching/demo-code/node-websocket-ex/
+cd cse1500-demo-code/node-websocket-ex/
 npm install
 node app.js 3000
 ```
@@ -145,7 +145,7 @@ Now open your browser and access the following URL: http://localhost:3000/. The 
 This Node.js script showcases the use of Ajax in the form of a toy todo application. The server has todo items stored in memory that can be retrieved by the client (`/todos`); the client can also send additional todo items to the server (`/addtodo`). Install and start the server as follows:
 
 ```console
-cd Web-Teaching/demo-code/node-ajax-ex/
+cd cse1500-demo-code/node-ajax-ex/
 npm install
 node app.js
 ```
@@ -159,7 +159,7 @@ Now open your browser and access the following URL: http://localhost:3000/. You 
 Install and run the server (which sends todos to the client when the client requests them with the correct username/password combination):
 
 ```console
-cd Web-Teaching/demo-code/node-component-ex/
+cd cse1500-demo-code/node-component-ex/
 npm install
 npm start
 ```
@@ -176,7 +176,7 @@ Now open another terminal and use `curl`:
 In this toy example, we count how often a user access a route (`/countme`) in a session. Install and start the server as follows:
 
 ```console
-cd Web-Teaching/demo-code/node-sessions-ex/
+cd cse1500-demo-code/node-sessions-ex/
 npm install
 node app.js
 ```
@@ -188,7 +188,7 @@ Now open your browser and access the following URL: http://localhost:3001/. Refr
 In this toy example, we count how often a user access a route (`/countme`) in a session. Install and start the server as follows:
 
 ```console
-cd Web-Teaching/demo-code/node-cookies-ex/
+cd cse1500-demo-code/node-cookies-ex/
 npm install
 node app.js 3000
 ```
@@ -204,7 +204,7 @@ In order to see the cookies the browser receives, open the Network Monitor of th
 In this toy example, we use the view engine to send HTML templates with data in response to HTTP requests. Install and start the server:
 
 ```console
-cd Web-Teaching/demo-code/node-ejs-ex/
+cd cse1500-demo-code/node-ejs-ex/
 npm install
 node app.js 3000
 ```
@@ -216,7 +216,7 @@ Now open your browser and access the following URL: http://localhost:3000/todos.
 This folder contains a number of single-page applications that are used mostly in exams. Install and start the server
 
 ```console
-cd Web-Teaching/demo-code/node-SPAs-ex/
+cd cse1500-demo-code/node-SPAs-ex/
 npm install
 node app.js 3000
 ```
