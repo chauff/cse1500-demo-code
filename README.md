@@ -181,7 +181,7 @@ npm install
 node app.js
 ```
 
-Now open your browser and access the following URL: http://localhost:3001/. Refresh the page a few times and then restart the browser or use a private browser window to start another session (just opening a new browser tab or window will not result in another session).
+Now open your browser and access the following URL: http://localhost:3000/countMe. Refresh the page a few times and then restart the browser or use a private browser window to start another session (just opening a new browser tab or window will not result in another session).
 
 ## node-cookies-ex
 
