@@ -4,7 +4,7 @@ const express = require("express");
 const url = require("url");
 const http = require("http");
 
-const port = 3010;
+const port = 3000;
 const app = express();
 app.use(express.static(__dirname + "/client"));
 http.createServer(app).listen(port);
