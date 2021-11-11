@@ -82,7 +82,7 @@ cd cse1500-demo-code/node-web-ex/
 node web.js 3000
 ```
 
-Open your browser and use the following URL `http://localhost:3000/` to receive the server's `Hello World!` message.
+Open your browser and use the following URL http://localhost:3000/ to receive the server's `Hello World!` message.
 
 ## node-express-ex
 
@@ -119,10 +119,10 @@ npm install
 node web.js
 ```
 
-Now start the browser and access `http://localhost:3000/`. A call to `http://localhost:3000/retrievePattern` shows the currently set pattern. To check the result of submitting valid and invalid routes, try the following two URLS:
+Now start the browser and access http://localhost:3000/. A call to http://localhost:3000/retrievePattern shows the currently set pattern. To check the result of submitting valid and invalid routes, try the following two URLS:
 
-- `http://localhost:3000/ab` (invalid)
-- `http://localhost:3000/ab1234cd` (valid)
+- http://localhost:3000/ab (invalid)
+- http://localhost:3000/ab1234cd (valid)
 
 Now that you know how the demo works, submit your own string pattern via the form and test your string pattern knowledge!
 
