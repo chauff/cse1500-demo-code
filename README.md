@@ -82,7 +82,7 @@ cd cse1500-demo-code/node-web-ex/
 node web.js 3000
 ```
 
-Open your browser and use the following URL `http://localhost:3000/` to receive the server's `Hello World!` message.
+Open your browser and use the following URL http://localhost:3000/ to receive the server's `Hello World!` message.
 
 ## node-express-ex
 
