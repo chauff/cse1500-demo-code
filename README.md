@@ -17,6 +17,7 @@ Important: **The instructions that follow now to install and run the different d
 - [node-file-watching-ex](#node-file-watching-ex)
 - [node-tcp-ex](#node-tcp-ex)
 - [node-web-ex](#node-web-ex)
+- [node-url-routing-ex](#node-url-routing-ex)
 - [node-express-ex](#node-express-ex)
 - [node-express-regex](#node-express-regex)
 - [node-websocket-ex](#node-websocket-ex)
@@ -78,7 +79,7 @@ If everything went as intended, your client now shows the message `Now watching 
 
 ## node-web-ex
 
-This Node.js script shows the most minimalistic web server possible: whatever the HTTP request, it will respond with `Hello World!`. To start it, execute the following command in your terminal:
+This Node.js script shows the most minimalistic web server possible: whatever the HTTP request, it will respond with `Hello World!`. To start it, execute the following commands in your terminal:
 
 ```console
 cd node-web-ex/
@@ -86,6 +87,20 @@ node web.js 3000
 ```
 
 Open your browser and use the following URL http://localhost:3000/ to receive the server's `Hello World!` message.
+
+## node-url-routing-ex
+
+This Node.js scrdipt shows a minimal web server with routing: the `/greetme` path is treated differently from any other path. To start it, execute the following:
+
+```console
+cd node-url-routing-ex
+node web.js 3000
+```
+
+Open your browser and try a few different paths:
+- http://localhost:3000/
+- http://localhost:3000/greetme
+- http://localhost:3000/greetme?name=Mickey
 
 ## node-express-ex
 
