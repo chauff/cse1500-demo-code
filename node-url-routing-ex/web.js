@@ -1,36 +1,39 @@
-var http = require("http");
-var url = require("url");
+const http = require("http");
+const url = require("url");
 
-var port = process.argv[2];
+if (process.argv.length < 3) {
+  console.log("Usage: node app.js <port>");
+  process.exit(1);
+}
+const port = process.argv[2];
 
 function simpleHTTPResponder(req, res) {
+  //parse the URL
+  var uParts = url.parse(req.url, true);
 
-    //parse the URL
-    var uParts = url.parse(req.url, true);
+  //implemented path
+  if (uParts.pathname == "/greetme") {
+    res.writeHead(200, { "Content-Type": "text/plain" });
 
-    //implemented path
-    if (uParts.pathname == "/greetme"){
-        res.writeHead(200, { "Content-Type": "text/plain" });
+    //parse the query
+    var query = uParts.query;
+    var name = "Anonymous";
 
-        //parse the query
-        var query = uParts.query;
-        var name = "Anonymous";
-
-        if (query["name"] != undefined){
-            name = query["name"];
-        }
-
-        res.end(" Greetings "+name);
+    if (query["name"] != undefined) {
+      name = query["name"];
     }
-    //all other paths
-    else {
-        res.writeHead(404, { "Content-Type": "text/plain" });
-        res.end("Only /greetme is implemented.");
-    }
+
+    res.end(" Greetings " + name);
+  }
+  //all other paths
+  else {
+    res.writeHead(404, { "Content-Type": "text/plain" });
+    res.end("Only /greetme is implemented.");
+  }
 }
 
-var server = http.createServer(simpleHTTPResponder);
+const server = http.createServer(simpleHTTPResponder);
 
 server.listen(port, function () {
-    console.log("Listening on port " + port);
+  console.log("Listening on port " + port);
 });

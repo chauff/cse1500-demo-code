@@ -1,6 +1,10 @@
 const express = require("express");
 const http = require("http");
 
+if (process.argv.length < 3) {
+  console.log("Usage: node app.js <port>");
+  process.exit(1);
+}
 const port = process.argv[2];
 const app = express();
 

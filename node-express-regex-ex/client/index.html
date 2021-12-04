@@ -1,75 +1,88 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Express String Pattern Matcher</title>
-        <style>
-            body {
-                display: grid;
-                height: 100vh;
-                justify-content: center;
-                align-content: center;
-                font-size: 3vw;
-                color: crimson;
-                background-color: gold;
-            }
+  <head>
+    <title>Express String Pattern Matcher</title>
+    <style>
+      body {
+        display: grid;
+        height: 100vh;
+        justify-content: center;
+        align-content: center;
+        font-size: 3vw;
+        color: crimson;
+        background-color: gold;
+      }
 
-            .path {
-                font-family: 'Courier New', Courier, monospace;
-                background-color: crimson;
-                color: gold;
-            }
+      .path {
+        font-family: "Courier New", Courier, monospace;
+        background-color: crimson;
+        color: gold;
+      }
 
-            ul {
-                max-width: 80vw;
-            }
-            li {
-                list-style: none;
-                margin-bottom: 5px;
-            }
+      ul {
+        max-width: 80vw;
+      }
+      li {
+        list-style: none;
+        margin-bottom: 5px;
+      }
 
-            form {
-                display: flex;
-                align-items: center;
-            }
+      form {
+        display: flex;
+        align-items: center;
+      }
 
-            label, input {
-                margin-right: 5px;
-            }
+      label,
+      input {
+        margin-right: 5px;
+      }
 
-            input[type=text] {
-                width: 200px;
-                background-color: orange;
-                height: 2.5vw;
-                border-radius:6px;
-                border: none;
-            }
+      input[type="text"] {
+        width: 200px;
+        background-color: orange;
+        height: 2.5vw;
+        border-radius: 6px;
+        border: none;
+      }
 
-            input[type=submit] {
-                box-shadow:inset 0px 1px 0px 0px #f5978e;
-                background-color:crimson;
-                border-radius:6px;
-                border: 1px solid red;
-                display:inline-block;
-                color: gold;
-                font-size:1.4vw;
-                font-weight:bold;
-                padding:6px 24px;
-                text-decoration:none;            }
-        </style>
-    </head>
-    <body>
-        <h1>Express String Pattern Matcher!</h1>
+      input[type="submit"] {
+        box-shadow: inset 0px 1px 0px 0px #f5978e;
+        background-color: crimson;
+        border-radius: 6px;
+        border: 1px solid red;
+        display: inline-block;
+        color: gold;
+        font-size: 1.4vw;
+        font-weight: bold;
+        padding: 6px 24px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Express String Pattern Matcher!</h1>
 
-        <ul>
-            <li>
-                <form action="/setStringPattern" method="post">
-                    <label>Pattern to set: </label>
-                    <input type="text" name="pattern" id="pattern" placeholder="For example: ab*cd">
-                    <input type="submit" value="Submit">
-                </form>
-            </li>
-            <li><span class="path">/retrievePattern</span> retrieve set pattern (default: <span class="path">/ab*cd</span>).</li>
-            <li><span class="path">/some-url-path</span> see if the path matches the set string pattern.</li>
-        </ul>
-    </body>
+    <ul>
+      <li>
+        <form action="/setStringPattern" method="post">
+          <label>Pattern to set: </label>
+          <input
+            type="text"
+            name="pattern"
+            id="pattern"
+            placeholder="For example: ab*cd"
+          />
+          <input type="submit" value="Submit" />
+        </form>
+      </li>
+      <li>
+        <span class="path">/retrievePattern</span> retrieve set pattern
+        (default: <span class="path">/ab*cd</span>).
+      </li>
+      <li>
+        <span class="path">/some-url-path</span> see if the path matches the set
+        string pattern.
+      </li>
+    </ul>
+  </body>
 </html>

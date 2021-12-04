@@ -1,15 +1,18 @@
 # Demo code <!-- omit in toc -->
 
-Each of the directories `node-XX-ex` contain a fully working toy example, showcasing a particular Node.js/Express concept. They are referred to and explained throughout the different web lectures. For each one, installation and usage instructions are provided.
+Each of the directories in this repository contains a fully working demo code example, showcasing one or more concepts introduced in the class. For each directory, installation and usage instructions are provided in this README.
 
-Execute the following command in the terminal to download all source code examples (as well as all lecture materials) at once:
+Execute the following command in the terminal to download all source code examples at once:
 
 ```console
 git clone https://github.com/chauff/cse1500-demo-code.git
 ```
 
-**The following instructions to install and run the different scripts assume you are currently in the directory where the above line was executed.**
+Important: **The instructions that follow now to install and run the different demos assume you are currently in the directory where the above line was executed.**
 
+## Table of content
+
+- [Table of content](#table-of-content)
 - [firefox-extension](#firefox-extension)
 - [node-file-watching-ex](#node-file-watching-ex)
 - [node-tcp-ex](#node-tcp-ex)
@@ -29,9 +32,9 @@ git clone https://github.com/chauff/cse1500-demo-code.git
 
 This extension overlays a `<div>` on every page (once it is enabled of course) on the left-hand side of the web page. It lists the cookie name/value pairs that are accessible to it through JavaScript.
 
-To enable it on Firefox, execute the following steps:
+To enable it in Firefox, execute the following steps:
 
-1. Type `about:debugging` into your browser's address bar.
+1. Type `about:debugging` into Firefox's address bar.
 2. Click the `This Firefox` icon on the top-left.
 3. Click the `Load Temporary Add-on` button and navigate to the `manifest.json` file.
 
@@ -46,7 +49,7 @@ This Node.js script *watches* a file and reports on the console, when a change o
 To run it, execute the following commands in your terminal:
 
 ```console
-cd cse1500-demo-code/node-file-watching-ex/
+cd node-file-watching-ex
 node watching.js todos.txt
 ```
 
@@ -54,12 +57,12 @@ If you now change the file `todos.txt` (which resides in the same folder as `wat
 
 ## node-tcp-ex
 
-This Node.js script (=server) watches a file and informs subscribed clients about file changes.
+This Node.js script (i.e. our server) watches a file and informs subscribed clients about file changes.
 
 To run it, execute the following commands in your terminal:
 
 ```console
-cd cse1500-demo-code/node-tcp-ex/
+cd node-tcp-ex/
 node tcp.js todos.txt 3000
 ```
 
@@ -71,14 +74,14 @@ Now open **another** terminal window (*while keeping the first one open*) and us
 telnet localhost 3000
 ```
 
-If everything went as intended, your client now shows the message `Now watching todos.txt for changes` and your server shows `Subscriber connected`. Alter the `todos.txt` file and then disconnect the client and observe the message(s) that appear.
+If everything went as intended, your client now shows the message `Now watching todos.txt for changes` and your server shows `Subscriber connected`. Alter the `todos.txt` file and then disconnect the client (remember: <kbd>Ctrl</kbd>+<kbd>]</kbd>) and observe the message(s) that appear.
 
 ## node-web-ex
 
 This Node.js script shows the most minimalistic web server possible: whatever the HTTP request, it will respond with `Hello World!`. To start it, execute the following command in your terminal:
 
 ```console
-cd cse1500-demo-code/node-web-ex/
+cd node-web-ex/
 node web.js 3000
 ```
 
@@ -86,10 +89,10 @@ Open your browser and use the following URL http://localhost:3000/ to receive th
 
 ## node-express-ex
 
-This Node.js script makes use of the Express framework. It is a simple web server that has a route `/greetme` and sends a simple text message in the HTTP response. As Express is not a module installed by default, we first have to install the required modules as stated in `package.json`:
+This Node.js script makes use of the Express framework. It is a simple web server that has a route `/greetme` and sends a text message in the HTTP response. As Express is not a module installed by default, we first have to install the required modules as stated in `package.json`:
 
 ```console
-cd cse1500-demo-code/node-express-ex/
+cd node-express-ex/
 npm install
 node web.js
 ```
@@ -114,7 +117,7 @@ Note, that the pattern is set **without** a leading dash `/`, so the route `/ab*
 Install the demo as follows:
 
 ```console
-cd cse1500-demo-code/node-express-regex-ex/
+cd node-express-regex-ex/
 npm install
 node web.js
 ```
@@ -131,35 +134,35 @@ Now that you know how the demo works, submit your own string pattern via the for
 This Node.js script makes use of the Express framework. It is a simple web server that has a route `/greetme` and sends a simple text message in the HTTP response. As Express is not a module installed by default, we first have to install the required modules as stated in `package.json` and then, the server can be started:
 
 ```console
-cd cse1500-demo-code/node-websocket-ex/
+cd node-websocket-ex/
 npm install
 node app.js 3000
 ```
 
 Now open your browser and access the following URL: http://localhost:3000/. The client initiates the WebSocket connection with the server and receives a corresponding response. You can see this happening clearly when opening the Network Monitor of the browser's web development tools.
 
-*Note: in `package.json` we have defined a `start` script this time, we could have also started the application with `npm start` instead of `node app.js 3000`. Both options are valid and result in the same behavior.*
+*Note: take a look at `package.json`. We have defined a `start` property this time. We could have also started the application with `npm start` instead of `node app.js 3000`. Both options are valid and result in the same behavior.*
 
 ## node-ajax-ex
 
 This Node.js script showcases the use of Ajax in the form of a toy todo application. The server has todo items stored in memory that can be retrieved by the client (`/todos`); the client can also send additional todo items to the server (`/addtodo`). Install and start the server as follows:
 
 ```console
-cd cse1500-demo-code/node-ajax-ex/
+cd node-ajax-ex/
 npm install
 node app.js
 ```
 
 Now open your browser and access the following URL: http://localhost:3000/. You will see a list of todos (retrieved through an Ajax request).
 
-*Note: as in the previous example, we have defined a `start` script, so `node app.js` could have been replaced by `npm start`.*
+*Note: as in the previous example, we have defined a `start` property, so `node app.js` could have been replaced by `npm start`.*
 
 ## node-component-ex
 
 Install and run the server (which sends todos to the client when the client requests them with the correct username/password combination):
 
 ```console
-cd cse1500-demo-code/node-component-ex/
+cd node-component-ex/
 npm install
 npm start
 ```
@@ -176,7 +179,7 @@ Now open another terminal and use `curl`:
 In this toy example, we count how often a user access a route (`/countme`) in a session. Install and start the server as follows:
 
 ```console
-cd cse1500-demo-code/node-sessions-ex/
+cd node-sessions-ex/
 npm install
 node app.js
 ```
@@ -185,17 +188,17 @@ Now open your browser and access the following URL: http://localhost:3000/countM
 
 ## node-cookies-ex
 
-In this toy example, we count how often a user access a route (`/countme`) in a session. Install and start the server as follows:
+In this example, we count how often a user accesses a route (`/countme`) in a session. Install and start the server as follows:
 
 ```console
-cd cse1500-demo-code/node-cookies-ex/
+cd node-cookies-ex/
 npm install
 node app.js 3000
 ```
 
 Now open your browser and access the following URLs:
 - http://localhost:3000/sendMeCookies
-- http://localhost:3000/listAllcookies
+- http://localhost:3000/listAllCookies
 
 In order to see the cookies the browser receives, open the Network Monitor of the web development tools.
 
@@ -204,7 +207,7 @@ In order to see the cookies the browser receives, open the Network Monitor of th
 In this toy example, we use the view engine to send HTML templates with data in response to HTTP requests. Install and start the server:
 
 ```console
-cd cse1500-demo-code/node-ejs-ex/
+cd node-ejs-ex/
 npm install
 node app.js 3000
 ```
