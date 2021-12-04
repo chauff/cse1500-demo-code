@@ -223,7 +223,7 @@ node app.js 3000
 
 Available are now three little utilities:
 
-http://localhost:3000 shows off a digital clock (where the digits are designed with CSS `border-X` properties) that receives time updates from the server via Ajax.
+http://localhost:3000/time shows off a digital clock (where the digits are designed with CSS `border-X` properties) that receives time updates from the server via Ajax.
 
 ![Digital clock](img/clockDemo.png)
 
@@ -231,6 +231,6 @@ http://localhost:3000/keypress shows off a utility app: whenever a key on the ke
 
 ![Keypress](img/keypressDemo.png)
 
-http://localhost:3000/colors/pink/blue shows off another utility: the URL takes two colors (which it assumes exist in CSS's color space) and render a Hello World! text; the background color is the first color of the URL and the font color is the second color. It can be seen as a simple way to check whether two colors harmonize well with each other.
+http://localhost:3000/colors/pink/blue shows off another utility: the URL takes two colors (which it assumes exist in CSS's color space) and renders a Hello World! text; the background color is the first color defined in the URL and the font color is the second one. It can be seen as a simple way to check whether two colors harmonize well with each other. Take a look at [Wikipedia's web color page](https://en.wikipedia.org/wiki/Web_colors) to find out what color names can be used. Unrecognized colors are ignored: in this case the font/background are the browser's default.
 
 ![Colors](img/colorsDemo.png)
