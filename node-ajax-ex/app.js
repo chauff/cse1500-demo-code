@@ -27,7 +27,7 @@ let psvrGames = [
   },
 ];
 
-//clients requests the list of games
+//clients request the list of games
 app.get("/psvrGames", function (req, res) {
   console.log("PSVR games requested!");
   res.json(psvrGames);

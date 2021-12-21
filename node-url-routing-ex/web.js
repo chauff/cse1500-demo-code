@@ -9,15 +9,15 @@ const port = process.argv[2];
 
 function simpleHTTPResponder(req, res) {
   //parse the URL
-  var uParts = url.parse(req.url, true);
+  const uParts = url.parse(req.url, true);
 
   //implemented path
   if (uParts.pathname == "/greetme") {
     res.writeHead(200, { "Content-Type": "text/plain" });
 
     //parse the query
-    var query = uParts.query;
-    var name = "Anonymous";
+    const query = uParts.query;
+    let name = "Anonymous";
 
     if (query["name"] != undefined) {
       name = query["name"];
