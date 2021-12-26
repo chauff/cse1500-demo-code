@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 if (process.argv.length < 3) {
-  console.log("Usage: node app.js <port>");
+  console.log("Usage: node app.js <file>");
   process.exit(1);
 }
 const file = process.argv[2];
